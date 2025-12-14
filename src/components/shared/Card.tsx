@@ -13,7 +13,7 @@ export function Card({ children, variant = "light", className = "", hoverable = 
   const variants = {
     light: "bg-white border-gray-200 shadow-md",
     dark: "bg-slate-800/50 border-slate-700/50 shadow-lg",
-    gradient: "bg-gradient-to-br from-slate-800/30 to-slate-900/30 border-slate-700/50 shadow-lg",
+    gradient: "bg-linear-to-br from-slate-800/30 to-slate-900/30 border-slate-700/50 shadow-lg",
   }
 
   const hoverClasses = hoverable ? "hover:shadow-lg hover:border-purple-primary/50 hover:scale-101" : ""

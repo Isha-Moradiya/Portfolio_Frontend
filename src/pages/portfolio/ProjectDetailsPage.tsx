@@ -38,7 +38,7 @@ export default function ProjectDetailsPage() {
 
   if (!project) {
     return (
-      <PortfolioLayout breadcrumbs={[{ label: "Home", href: "/" }, { label: "Projects", href: "/projects" }]}>
+      <PortfolioLayout>
         <div className="min-h-screen flex items-center justify-center">
           <p className="text-gray-500 text-lg">Project not found</p>
         </div>
@@ -47,14 +47,8 @@ export default function ProjectDetailsPage() {
   }
 
   return (
-    <PortfolioLayout
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Projects", href: "/projects" },
-        { label: project.title },
-      ]}
-    >
-      <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-gray-50 via-white to-purple-50">
+    <PortfolioLayout>
+      <section className="py-16 px-4 md:px-8 bg-linear-to-br from-gray-50 via-white to-purple-50">
         <div className="max-w-6xl mx-auto">
           <Link
             to="/projects"
@@ -65,13 +59,13 @@ export default function ProjectDetailsPage() {
           </Link>
 
           <div className="mb-12">
-            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-8 bg-gradient-to-br from-purple-100 to-purple-200">
+            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-8 bg-linear-to-br from-purple-100 to-purple-200">
               <img
                 src={project.thumbnail || "/placeholder.svg"}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h1>
                 <div className="flex flex-wrap gap-3">
@@ -194,9 +188,9 @@ export default function ProjectDetailsPage() {
                 </div>
               </Card>
 
-              <Card variant="light" className="p-6 bg-gradient-to-br from-purple-600 to-purple-700 text-white">
+              <Card variant="light" className="p-6 bg-linear-to-br from-purple-50 to-purple-100 border-purple-200">
                 <h3 className="text-xl font-bold mb-3">Interested in similar work?</h3>
-                <p className="text-purple-100 mb-4">
+                <p className="text-gray-600 mb-4">
                   Let's discuss how I can help with your project.
                 </p>
                 <Button
@@ -222,7 +216,7 @@ export default function ProjectDetailsPage() {
                     className="group"
                   >
                     <Card variant="light" hoverable className="flex flex-col h-full overflow-hidden">
-                      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-purple-100 to-purple-200">
+                      <div className="relative h-48 overflow-hidden bg-linear-to-br from-purple-100 to-purple-200">
                         <img
                           src={relatedProject.thumbnail || "/placeholder.svg"}
                           alt={relatedProject.title}
